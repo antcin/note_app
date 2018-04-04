@@ -3,7 +3,9 @@ function loadXMLDoc(file) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      console.log(this.responseText.split('<body>').pop().split('</body>')[0]);
+      var body_tag = document.getElementById('hidden_html_body')
+      body_tag.innerHTML = this.responseText.split('<body>').pop().split('</body>')[0];
+      // console.log(this.responseText.split('<body>').pop().split('</body>')[0]);
     }
   };
 
@@ -23,9 +25,9 @@ function getScript(file) {
   xhttp.open("GET", file, true);
   xhttp.send();
 }
+//
+// loadXMLDoc('jerryRunner.html')
+// getScript('src/clickme.js')
 
-loadXMLDoc('jerryRunner.html')
-getScript('src/clickme.js')
 
-
-var s = document.createElement('script')
+// var s = document.createElement('script')
