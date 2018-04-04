@@ -13,3 +13,7 @@ Notebook.prototype.abbreviate = function(note) {
     return note.slice(0,20) + "...";
   return note
 };
+
+function clickMe(){
+  alert('I have been clicked');
+}
