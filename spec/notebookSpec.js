@@ -36,10 +36,8 @@ let tests =
 function runAll(arrayOfTestObj) {
   let element = document.getElementById('test_div')
   let string = ''
-  console.log(string)
   for (let i = 0;i < arrayOfTestObj.length;i++) {
     string += testToHTML(arrayOfTestObj[i])
-    console.log(string)
   }
   element.innerHTML = string
 }
@@ -50,6 +48,3 @@ function testToHTML(testObj) {
 }
 
 runAll(tests)
-
-
-// console.log(testCreate())
