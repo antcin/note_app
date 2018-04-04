@@ -1,7 +1,7 @@
 'use strict';
 
 function Notebook(){
-  this.all = [];
+  this.all = ['test note'];
 }
 
 Notebook.prototype.create = function(note) {
@@ -13,7 +13,3 @@ Notebook.prototype.abbreviate = function(note) {
     return note.slice(0,20) + "...";
   return note
 };
-
-function clickMe(){
-  alert('I have been clicked');
-}

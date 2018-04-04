@@ -5,7 +5,15 @@
 
   let featureTests =
   [
-    //'to write'
+    {
+      describe: '#showing notes',
+      it: 'displays notes in the body',
+      test: function(){
+
+        let notebook = new Notebook();
+        return document.body.innerHTML.includes('test note')
+      }
+    }
   ]
 
   exports.featureTests = featureTests

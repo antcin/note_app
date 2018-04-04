@@ -6,20 +6,23 @@ function importHTMLbody(file) {
       body_tag.innerHTML = this.responseText.split('<body>').pop().split('</body>')[0];
     }
   };
+  console.log('1')
 
   xhttp.open("GET", file, true);
   xhttp.send();
 }
 
-function importScript(file) {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      var script = document.getElementById('imported_script')
-      script.innerHTML = this.responseText
-    }
-  };
+importHTMLbody('index.html')
 
-  xhttp.open("GET", file, true);
-  xhttp.send();
-}
+// function importScript(file) {
+//   var xhttp = new XMLHttpRequest();
+//   xhttp.onreadystatechange = function() {
+//     if (this.readyState == 4 && this.status == 200) {
+//       var script = document.getElementById('imported_script')
+//       script.innerHTML = this.responseText
+//     }
+//   };
+//
+//   xhttp.open("GET", file, true);
+//   xhttp.send();
+// }
