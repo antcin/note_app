@@ -1,7 +1,7 @@
 'use strict';
 
 function Notebook(){
-  this.all = [];
+  this.all = ['test note'];
 }
 
 Notebook.prototype.create = function(note) {
