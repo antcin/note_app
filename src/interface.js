@@ -14,7 +14,7 @@ Interface.prototype.makeParagraphs = function () {
   var notes = this._notebook.all
   var string = '';
   for(var i = 0; i < notes.length; i++){
-    string += `<p>${this.abbreviate(notes[i])}</p>`
+    string += `<p onclick="iFace.get(${i})">${this.abbreviate(notes[i])}</p>`
   }
   return string
 };
