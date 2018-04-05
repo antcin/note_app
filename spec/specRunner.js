@@ -1,9 +1,6 @@
-let tests = unitTests.concat(featureTests);
+let unitTests = notebookTests.concat(interfaceTests);
 
 importHTMLbody('index.html')
   .then(() => {
-  let testNotebook = new Notebook();
-  let inter = new Interface(testNotebook);
-  inter.show();
-  jerry(tests)
+  jerry(unitTests, featureTests)
 })

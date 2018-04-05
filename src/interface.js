@@ -5,16 +5,22 @@ function Interface(notebook){
 }
 
 Interface.prototype.show = function(){
-  var notes = this._notebook.all
-  var string = '';
-  for(var i = 0; i < notes.length; i++){
-    string += `<p>${notes[i]}</p>`
-  }
   var abbreviationsDiv = document.getElementById('abbreviations')
-  console.log(abbreviationsDiv)
-  abbreviationsDiv.innerHTML = string
+  abbreviationsDiv.innerHTML = this.makeParagraphs();
 
 }
 
+Interface.prototype.makeParagraphs = function () {
+  var notes = this._notebook.all
+  var string = '';
+  for(var i = 0; i < notes.length; i++){
+    string += `<p>${this.abbreviate(notes[i])}</p>`
+  }
+  return string
+};
 
-// setTimeout(() => , 10)
+Interface.prototype.abbreviate = function(note) {
+  if (note.length > 20)
+    return note.slice(0,20) + "...";
+  return note
+};
