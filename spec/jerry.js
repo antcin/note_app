@@ -1,3 +1,4 @@
+'use strict';
 (function(exports) {
   function jerry(arrayOfTestObj) {
   let element = document.getElementById('test_div')

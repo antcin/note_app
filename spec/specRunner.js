@@ -1,5 +1,9 @@
 let tests = unitTests.concat(featureTests);
 
 importHTMLbody('index.html')
-
-setTimeout(() => jerry(tests), 100)
+  .then(() => {
+  let testNotebook = new Notebook();
+  let inter = new Interface(testNotebook);
+  inter.show();
+  jerry(tests)
+})

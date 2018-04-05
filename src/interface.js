@@ -11,10 +11,10 @@ Interface.prototype.show = function(){
     string += `<p>${notes[i]}</p>`
   }
   var abbreviationsDiv = document.getElementById('abbreviations')
+  console.log(abbreviationsDiv)
   abbreviationsDiv.innerHTML = string
 
 }
 
-let notebook = new Notebook
-let inter = new Interface(notebook)
-setTimeout(() => inter.show(), 10)
+
+// setTimeout(() => , 10)

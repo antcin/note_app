@@ -1,28 +1,25 @@
-function importHTMLbody(file) {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      var body_tag = document.getElementById('imported_html_body')
-      body_tag.innerHTML = this.responseText.split('<body>').pop().split('</body>')[0];
-    }
-  };
-  console.log('1')
+"use strict";
+(function(exports){
+  function importHTMLbody(file) {
 
-  xhttp.open("GET", file, true);
-  xhttp.send();
-}
+    return new Promise(function(resolve,reject) {
 
-importHTMLbody('index.html')
+      var xhttp = new XMLHttpRequest();
 
-// function importScript(file) {
-//   var xhttp = new XMLHttpRequest();
-//   xhttp.onreadystatechange = function() {
-//     if (this.readyState == 4 && this.status == 200) {
-//       var script = document.getElementById('imported_script')
-//       script.innerHTML = this.responseText
-//     }
-//   };
-//
-//   xhttp.open("GET", file, true);
-//   xhttp.send();
-// }
+      xhttp.open("GET", file, true);
+      xhttp.send();
+
+      xhttp.onreadystatechange = function() {
+
+        if (this.readyState == 4 && this.status == 200) {
+
+          var body_tag = document.getElementById('imported_html_body');
+          body_tag.innerHTML = this.responseText.split('<body>').pop().split('</body>')[0];
+          resolve();
+
+        }
+      }
+    })
+  }
+  exports.importHTMLbody = importHTMLbody
+})(this)
