@@ -24,3 +24,9 @@ Interface.prototype.abbreviate = function(note) {
     return note.slice(0,20) + "...";
   return note
 };
+
+Interface.prototype.create = function (note) {
+  this._notebook.create(note);
+  this.show();
+  document.getElementById('txt_note').value = ''
+};

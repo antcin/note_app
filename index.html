@@ -6,8 +6,8 @@
   </head>
   <body>
     <h1>Notebook</h1>
-    <textarea name="txt_note" rows="8" cols="80"></textarea><br/>
-    <button type="create" name="create">Create</button>
+    <textarea id="txt_note" name="txt_note" rows="8" cols="80"></textarea><br/>
+    <button id="create" type="create" name="create" onclick="iFace.create(document.getElementById('txt_note').value)">Create</button>
 
   <div id='abbreviations'></div>
 

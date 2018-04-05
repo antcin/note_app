@@ -15,7 +15,9 @@
       describe: '#creating new notes',
       it: 'creates and displays notes in the body',
       test: function(){
-        return document.body.innerHTML.includes('new test note created')
+        document.getElementById('txt_note').value = 'new test note created'
+        document.getElementById('create').click()
+        return document.body.innerHTML.includes('new test note create...')
       }
     }
   ]

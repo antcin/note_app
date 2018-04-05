@@ -23,7 +23,7 @@
   function createTestEnviroment() {
     let testNotebook = new Notebook();
     testNotebook.create('test note')
-    let iFace = new Interface(testNotebook);
+    iFace = new Interface(testNotebook);
     iFace.show();
 
   }
