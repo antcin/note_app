@@ -38,6 +38,17 @@
         return document.body.innerHTML.includes('is is a test') === false
       }
     },
+    {
+      describe: '#showing a full note',
+      it: 'displays the full note in a div',
+      test: function() {
+        document.getElementById('txt_note').value = 'My name is Jerry, this is a test'
+        document.getElementById('create').click()
+        console.log(document.getElementById('abbreviations').childNodes)
+        document.getElementById('abbreviations').childNodes[1].click()
+        return document.body.innerHTML.includes('is is a test')
+      }
+    }
   ]
 
   exports.featureTests = featureTests

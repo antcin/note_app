@@ -32,6 +32,5 @@ Interface.prototype.create = function(note) {
 };
 
 Interface.prototype.get = function(index) {
-  alert(this._notebook.all[index])
-
+  document.getElementById('expanded_note').innerHTML = this._notebook.showSingleNote(index)
 }
